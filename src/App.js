@@ -26,13 +26,7 @@ class App extends Component {
 
   handleUserSubmit = u => {
     fetch(userURI + u)
-    .then(response => {
-      const status = response.status;
-      if (status < 200 || status > 299) {
-        throw new Error("unexpected status in response: " + status);
-      }
-      return response.json();
-    })
+    .then(response => this.handleSuccess(response))
     .then(data => this.handleUserData(u, data))
     .catch(err => console.error(err))
   }
@@ -44,16 +38,18 @@ class App extends Component {
       userData: data,
     });
     fetch(userURI + user + repoURIend)
-    .then(response => {
-      const status = response.status;
-      if (status < 200 || status > 299) {
-        throw new Error("unexpected response status: " + status);
-      }
-      return response.json();
-    })
+    .then(response => this.handleSuccess(response))
     .then(rData => this.setState({userRepos: rData}))
     .catch(err => console.error(err))
   };
+
+  handleSuccess = function(response) {
+    const status = response.status;
+    if (status < 200 || status > 299) {
+      throw new Error("unexpected response status: " + status);
+    }
+    return response.json();
+  }
 
   handleReset = () => {
     this.setState({
