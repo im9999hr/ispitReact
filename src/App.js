@@ -71,7 +71,7 @@ class App extends Component {
         pageDisplay = <UserRepos data = {userData} repos = {userRepos} onReset = {this.handleReset}/>;
         break;
       default:
-        pageDisplay = <div style={{color:"red"}}>Something is wrong</div>;;
+        pageDisplay = <div style={{color:"red"}}>Something is wrong</div>;
         break;
     }
     return (

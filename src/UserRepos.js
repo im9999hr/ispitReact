@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types"; 
 
 export default class UserRepos extends Component {
 
@@ -23,4 +24,10 @@ export default class UserRepos extends Component {
       </div>
     );
   }
+}
+
+UserRepos.propTypes = {
+  data: PropTypes.object.isRequired,
+  repos: PropTypes.array.isRequired,
+  onReset: PropTypes.func.isRequired
 }

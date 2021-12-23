@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types"; 
 const handleSubmit = (e, user, submit) => {
   e.preventDefault();
   const trimEnd = user.trimEnd();
@@ -18,4 +18,10 @@ export default function EnterUser(props) {
       <input className = "wdt2 clr" type="submit" value="GO!"/>
     </form>
   )
+}
+
+EnterUser.propTypes = {
+  user: PropTypes.string.isRequired,
+  onUserChange: PropTypes.func.isRequired,
+  onUserSubmit: PropTypes.func.isRequired
 }
