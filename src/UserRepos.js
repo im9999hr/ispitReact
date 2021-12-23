@@ -19,7 +19,7 @@ export default class UserRepos extends Component {
           > {repo.name} 
           </div>
         ))}  <br/>
-        <input className = "wdt2 clr" type="submit" value="Reset" onClick={onReset}/> 
+        <input className = "wdt3 clr" type="submit" value="Reset" onClick={onReset}/> 
       </div>
     );
   }

@@ -20,13 +20,21 @@ div>span {
 }
 
 .wdt1 {
-  width:49%;
+  width:99%;
 }
 
 .wdt2 {
-  width:50%;
+  width:100%;
+}
+
+.wdt3 {
+  width:100%;
 }
 
 .clr {
   background-color: rgba(95, 88, 88, 0.582);
+}
+
+input {
+  height: 4vh;
 }
